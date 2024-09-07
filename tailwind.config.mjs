@@ -4,10 +4,11 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'charcoal': '#1F2937',
-				'jet-black': '#030712',
-				'raisin-black': '#111827',
-      	'silver-chalice': '#BCBCBC',
+				'charcoal': '#111827',
+				'rich-black': '#030712',
+				'cool-gray': '#94A3B8',
+      	'charcoal-blue': '#303C4F',
+				'sky-blue': '#32B7E8'
 			}
 		},
 	},
