@@ -1,6 +1,7 @@
 ---
 import '@styles/main.css'
 import '@fontsource-variable/inter'
+import '@fontsource-variable/onest'
 import { ViewTransitions } from 'astro:transitions'
 
 interface Props {
@@ -11,7 +12,7 @@ const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -20,16 +21,6 @@ const { title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
-
-    <style is:inline>
-      @font-face {
-        font-family: 'Menlo';
-        font-style: normal;
-        font-weight: normal;
-        src: url('/font/Menlo-Regular.woff') format('woff');
-        font-display: swap;
-      }
-    </style>
 
     <script is:inline>
       const getTheme = () => {
@@ -47,13 +38,15 @@ const { title } = Astro.props
           localStorage.setItem('theme', 'light')
         }
       }
-
       setTheme()
+      document.addEventListener('astro:page-load', setTheme)
     </script>
   </head>
-  <body class="relative text-black bg-white dark:bg-rich-black dark:text-white">
+  <body
+    class="relative text-black bg-white dark:bg-rich-black dark:text-white font-onest"
+  >
     <div
-      class="background absolute inset-0 -z-10 before:absolute after:absolute before:w-60 before:h-80 after:w-60 after:h-80 before:bg-sky-500 after:bg-sky-500 before:blur-[200px] after:blur-[200px] before:top-[10%] after:top-[20%] after:right-0"
+      class="background absolute inset-0 -z-10 before:absolute after:absolute before:w-60 before:h-96 after:w-60 after:h-80 before:bg-sky-500 after:bg-sky-500 before:blur-[200px] after:blur-[200px] before:top-[5%] after:top-[20%] after:right-0"
     >
     </div>
     <slot />
