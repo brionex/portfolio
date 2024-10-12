@@ -1,0 +1,25 @@
+---
+import Sun from '@icons/Sun.astro'
+import Moon from '@icons/Moon.astro'
+---
+
+<button id="theme-switch" class="flex">
+  <Sun class="dark:hidden" />
+  <Moon class="hidden dark:block" />
+</button>
+
+<style>
+  button {
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    const button = document.querySelector('#theme-switch')
+    setTheme()
+    button?.addEventListener('click', () => {
+      localStorage.setItem('theme', getTheme() === 'dark' ? 'light' : 'dark')
+      setTheme()
+    })
+  })
+</script>
