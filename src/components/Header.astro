@@ -1,0 +1,69 @@
+---
+import Logo from '@components/Logo.astro'
+import Github from '@icons/Github.astro'
+import Nav from '@components/Nav.astro'
+import ThemeSwitcher from '@components/ThemeSwitcher.astro'
+---
+
+<header
+  class="fixed backdrop-blur-[10px] top-0 z-10 grid grid-cols-[min-content_1fr] w-full py-7 group/header md:px-5 md:flex md:gap-x-5 md:justify-between md:items-center"
+>
+  <Logo />
+  <Nav />
+
+  <div class="flex items-center justify-end gap-5">
+    <ul
+      class="flex *:p-2 hover:*:text-sky-400 hover:*:scale-110 *:transition-transform"
+    >
+      <li>
+        <a href="https://github.com/brionex" target="_blank" rel="noreferrer">
+          <Github />
+        </a>
+      </li>
+      <li>
+        <ThemeSwitcher />
+      </li>
+    </ul>
+
+    <button class="pr-5 md:hidden">
+      <label for="toggle-nav" class="block p-2 space-y-2 cursor-pointer">
+        <span
+          class="block h-1 w-6 rounded-full bg-current transition-transform ease-in-out group-has-[input:checked]/header:translate-y-1.5 group-has-[input:checked]/header:rotate-45"
+        ></span>
+        <span
+          class="block h-1 w-6 rounded-full bg-current transition-transform ease-in-out group-has-[input:checked]/header:-translate-y-1.5 group-has-[input:checked]/header:-rotate-45"
+        ></span>
+      </label>
+    </button>
+  </div>
+</header>
+
+<style>
+  header {
+    animation: reduce-header-light linear both;
+    animation-timeline: scroll();
+    animation-range: 0 150px;
+  }
+
+  html.dark header {
+    animation: reduce-header-dark linear both;
+    animation-timeline: scroll();
+    animation-range: 0 150px;
+  }
+
+  @keyframes reduce-header-light {
+    100% {
+      @apply bg-white/75 py-4;
+    }
+  }
+
+  @keyframes reduce-header-dark {
+    100% {
+      box-shadow:
+        0 5px 50px -5px #ffffff1a,
+        0 0 0 1px #ffffff1a;
+
+      @apply bg-rich-black/75 py-4;
+    }
+  }
+</style>
