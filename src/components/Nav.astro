@@ -1,0 +1,19 @@
+---
+import Home from '@icons/Home.astro'
+import Brain from '@icons/Brain.astro'
+import News from '@icons/News.astro'
+import School from '@icons/School.astro'
+import NavLink from '@components/NavLink.astro'
+---
+
+<nav
+  class="row-[2/3] col-span-2 grid grid-rows-[0fr] has-[input:checked]:grid-rows-[1fr] has-[input:checked]:pt-5 transition-[grid-template-rows_padding] ease-in-out duration-300 overflow-hidden md:flex"
+>
+  <input type="checkbox" id="toggle-nav" hidden aria-hidden />
+  <ul class="flex flex-col overflow-hidden md:flex-row">
+    <NavLink href="/"><Home /> Inicio</NavLink>
+    <NavLink href="#projects"><School /> Proyectos</NavLink>
+    <NavLink href="#skills"><Brain /> Habilidades</NavLink>
+    <NavLink href="/blog"><News /> Blog</NavLink>
+  </ul>
+</nav>
