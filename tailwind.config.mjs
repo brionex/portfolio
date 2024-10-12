@@ -9,7 +9,7 @@ export default {
       },
       fontFamily: {
         inter: ["'Inter Variable'", 'sans-serif'],
-        menlo: ["'Menlo Variable'", 'monospace'],
+        onest: ["'Onest Variable'", 'Inter Variable', 'sans-serif'],
       },
     },
   },
