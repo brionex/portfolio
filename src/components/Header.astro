@@ -6,7 +6,7 @@ import ThemeSwitcher from '@components/ThemeSwitcher.astro'
 ---
 
 <header
-  class="fixed backdrop-blur-[10px] top-0 z-10 grid grid-cols-[min-content_1fr] w-full py-7 group/header md:px-10 md:flex md:gap-x-5 md:justify-between md:items-center"
+  class="fixed backdrop-blur-[10px] top-0 z-10 grid grid-cols-[min-content_1fr] w-full py-7 group/header md:px-10 md:flex md:gap-x-5 md:justify-between md:items-center md:backdrop-blur-[0px]"
 >
   <Logo />
   <Nav />
@@ -53,7 +53,7 @@ import ThemeSwitcher from '@components/ThemeSwitcher.astro'
 
   @keyframes reduce-header-light {
     100% {
-      @apply bg-white/75 py-4;
+      @apply backdrop-blur-[10px] bg-white/75 py-4;
     }
   }
 
@@ -63,7 +63,7 @@ import ThemeSwitcher from '@components/ThemeSwitcher.astro'
         0 5px 50px -5px #ffffff1a,
         0 0 0 1px #ffffff1a;
 
-      @apply bg-rich-black/75 py-4;
+      @apply backdrop-blur-[10px] bg-rich-black/75 py-4;
     }
   }
 </style>
